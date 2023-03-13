@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write .",
+    "serve": "serve dist/",
     "postinstall": "husky install",
     "format-check": "prettier --check ."
   },
@@ -16,8 +17,11 @@
     "**/*": "prettier --write --ignore-unknown ."
   },
   "dependencies": {
+    "file-saver": "^2.0.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-ace": "^10.1.0",
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
