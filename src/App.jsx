@@ -19,6 +19,22 @@ function App() {
     setCode(tasks);
   });
 
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const handleKeyDown = (event) => {
+    if (event.ctrlKey && event.keyCode === 13) {
+      document.getElementById("the-run-button")?.click();
+    }
+    if (event.keyCode == 27) {
+      document.getElementById("the-exit-button")?.click();
+    }
+  };
+
   const parse = (stringOfTasks) => {
     let lineOfCodes = stringOfTasks.trim().split("\n");
     let tasks = [];
@@ -82,6 +98,7 @@ function App() {
         <div className="mx-auto flex flex-col">
           <Execute tasks={tasks} />
           <button
+            id="the-exit-button"
             className="mx-auto mt-20 w-24 rounded bg-orange-500 px-4 py-2 font-bold text-white duration-150 hover:scale-110 hover:bg-orange-600"
             onClick={() => setRunning(false)}
           >
@@ -153,6 +170,7 @@ function App() {
           />
           <div className="flex justify-center">
             <button
+              id="the-run-button"
               className="mx-auto w-24 rounded bg-lime-500 px-4 py-2 font-bold text-white duration-150 hover:scale-110 hover:bg-lime-600"
               onClick={run}
             >
