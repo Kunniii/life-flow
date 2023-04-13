@@ -119,26 +119,3 @@ export default function Execute(props) {
     </>
   );
 }
-
-// import { useState } from "react";
-
-// function App() {
-//   const [items, setItems] = useState(["Item 1", "Item 2", "Item 3"]);
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [showNext, setShowNext] = useState(false);
-
-//   const handleUserInput = (input) => {
-//     setShowNext(input);
-//     setCurrentIndex(currentIndex + 1);
-//   };
-
-//   return (
-//     <>
-//       <div>{items[currentIndex]}</div>
-//       {!showNext && <button onClick={() => handleUserInput(false)}>No</button>}
-//       {!showNext && <button onClick={() => handleUserInput(true)}>Yes</button>}
-//       {showNext && <div>{items[currentIndex]}</div>}
-//     </>
-//   );
-// }
-// export default App;

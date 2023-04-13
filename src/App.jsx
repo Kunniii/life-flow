@@ -24,7 +24,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [code]);
 
   const handleKeyDown = (event) => {
     if (event.ctrlKey && event.keyCode === 13) {
@@ -71,6 +71,7 @@ function App() {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
+      localStorage.setItem("tasks", reader.result);
       setCode(reader.result);
     };
   };
