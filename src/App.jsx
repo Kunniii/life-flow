@@ -12,6 +12,7 @@ function App() {
   const [running, setRunning] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [flowName, setFlowName] = useState("Flow 0x001");
+  const [closeHelper, setCloseHelper] = useState(true);
 
   useEffect(() => {
     let tasks = localStorage.getItem("tasks");
@@ -89,9 +90,40 @@ function App() {
         </div>
       ) : (
         <div className="mx-auto flex flex-col py-5 sm:w-96 md:w-[30rem] lg:w-[40rem] xl:w-[50rem]">
-          <h1 className="py-10 text-center text-3xl font-bold uppercase">
+          <h1 className="py-2 text-center text-3xl font-bold uppercase">
             life flow
           </h1>
+          {closeHelper ? (
+            <div className="w-96text-center mx-auto my-2">
+              <p>
+                <u
+                  onClick={() => {
+                    setCloseHelper(false);
+                  }}
+                >
+                  Show help!
+                </u>
+              </p>
+            </div>
+          ) : (
+            <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
+              <p>
+                To begin, please make a list in markdown, make sure to begin
+                with <pre className="inline">- (dash)</pre>. The tasks which
+                start with <pre className="inline">+ (plus)</pre> is the
+                completed tasks and will not be shown when you RUN.{" "}
+                <u
+                  onClick={() => {
+                    setCloseHelper(true);
+                  }}
+                >
+                  (Click to close)
+                </u>
+              </p>
+            </div>
+          )}
+          <hr />
+
           <AceEditor
             mode="markdown"
             theme="xcode"
