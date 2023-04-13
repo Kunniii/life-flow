@@ -124,20 +124,53 @@ function App() {
               </p>
             </div>
           ) : (
-            <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
-              <p>
-                To begin, please make a list in markdown, make sure to begin
-                with <pre className="inline">- (dash)</pre>. The tasks which
-                start with <pre className="inline">+ (plus)</pre> is the
-                completed tasks and will not be shown when you RUN.{" "}
-                <u
-                  onClick={() => {
-                    setCloseHelper(true);
-                  }}
-                >
-                  (Click to close)
-                </u>
-              </p>
+            <div>
+              <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
+                <p>
+                  To begin, please make a list in markdown, make sure to begin
+                  with <pre className="inline">- (dash)</pre>. The tasks which
+                  start with <pre className="inline">+ (plus)</pre> is the
+                  completed tasks and will not be shown when you RUN.{" "}
+                  <u
+                    onClick={() => {
+                      setCloseHelper(true);
+                    }}
+                  >
+                    (Click to close)
+                  </u>
+                </p>
+              </div>
+              <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
+                <p>
+                  <b>
+                    <u>Shortcuts:</u>
+                  </b>
+                  <table className="w-full table-fixed border-separate border-gray-700">
+                    <thead className="bg-gray-100 font-bold">
+                      <td>Key</td>
+                      <td>Definition</td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="font-bold">ctrl + enter</td>
+                        <td>RUN the current Flow</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Right arrow &gt; </td>
+                        <td>Toggle next task</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Left arrow &lt; </td>
+                        <td>Move to previous task</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">ESC</td>
+                        <td>Exit</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </p>
+              </div>
             </div>
           )}
           <hr />
