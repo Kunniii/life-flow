@@ -124,20 +124,18 @@ function App() {
               </p>
             </div>
           ) : (
-            <div>
+            <div
+              onClick={() => {
+                setCloseHelper(true);
+              }}
+            >
               <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
                 <p>
                   To begin, please make a list in markdown, make sure to begin
                   with <pre className="inline">- (dash)</pre>. The tasks which
                   start with <pre className="inline">+ (plus)</pre> is the
                   completed tasks and will not be shown when you RUN.{" "}
-                  <u
-                    onClick={() => {
-                      setCloseHelper(true);
-                    }}
-                  >
-                    (Click to close)
-                  </u>
+                  <u>(Click to close)</u>
                 </p>
               </div>
               <div className="mx-auto my-5 w-96 rounded-xl border p-2 text-justify">
@@ -157,7 +155,7 @@ function App() {
                       </tr>
                       <tr>
                         <td className="font-bold">Right arrow &gt; </td>
-                        <td>Toggle next task</td>
+                        <td>Move to next task</td>
                       </tr>
                       <tr>
                         <td className="font-bold">Left arrow &lt; </td>
